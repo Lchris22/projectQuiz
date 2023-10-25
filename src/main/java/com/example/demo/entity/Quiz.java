@@ -17,7 +17,7 @@ import jakarta.persistence.Table;
 @Table(name = "quiz")
 public class Quiz {
    
-	private String quizTopic="Java Core";
+	Topic quizTopic=Topic.JAVA;
 	
 
 	@Id
@@ -35,7 +35,7 @@ public class Quiz {
 	@JsonManagedReference
 	private List<Questions> listOfquestions = new ArrayList<>();
 
-	public String getQuizTopic() {
+	public Topic getQuizTopic() {
 		return quizTopic;
 	}
 
@@ -44,7 +44,7 @@ public class Quiz {
 		// TODO Auto-generated constructor stub
 	}
 
-	public Quiz(String quizTopic, int quizId, String quizName, int numberOfQuestions, int duaration,
+	public Quiz(Topic quizTopic, int quizId, String quizName, int numberOfQuestions, int duaration,
 			List<Questions> listOfquestions) {
 		super();
 		this.quizTopic = quizTopic;
@@ -55,7 +55,7 @@ public class Quiz {
 		this.listOfquestions = listOfquestions;
 	}
 
-	public void setQuizTopic(String quizTopic) {
+	public void setQuizTopic(Topic quizTopic) {
 		this.quizTopic = quizTopic;
 	}
 
